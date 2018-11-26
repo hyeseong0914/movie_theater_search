@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie_Schedule Site</title>
+    {% load staticfiles %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+        // Handler for .ready() called.
+        $('html, body').animate({
+            scrollTop: $('#scroll').offset().top
+        }, 'slow');
+    });
+
+    $(document).ready(function() {
+    var date = new Date();
+
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+
+    if (month < 10) month = "0" + month;
+    if (day < 10) day = "0" + day;
+
+    var today = year + "-" + month + "-" + day;
+    $("#theDate").attr("value", today);
+    $("#theDate").attr("min", today);
+    });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <ul class="main-nav">
+                {%block header%}{% endblock %}
+            </ul>
+        </div>
+        <div class="main-context">
+            <h1>영화 시간 검색</h1>
+                <div class="button">
+                    <a href="seoul" class="btn button1">서울</a>
+                    <a href="gyeonggi" class="btn button2">경기</a>
+                    <a href="incheon" class="btn button2">인천</a>
+                    <a href="daejeon" class="btn button2">대전/청주</a>
+                    <a href="gwangju" class="btn button2">광주/전라</a>
+                    <a href="daegu" class="btn button2">대구/경북</a>
+                    <a href="busan" class="btn button2">부산/경남</a>
+                </div>
+        </div>
+    </header>
+
+    <div id="site-container" class="site-contain">
+        {% block content %}{% endblock %}
+    </div>
+
+
+
+    <footer>
+        <div class="copyright">
+            <p> <span class="copysymbol">&copy;</span> 2018 Paul Mo ALL RIGHTS RESERVED</p>
+        </div>
+        <div class="social">
+            <a href="https://hyeseong0914.github.io/Portfolio/" class="support">About Me</a>
+            <a href="https://facebook.com" class="face">Facebook</a>
+            <a href="https://twitter.com" class="tweet">Twitter</a>
+            <a href="https://github.com/hyeseong0914/portfolio" class="linked">Github</a>
+        </div>
+    </footer>
+
+</body>
+</html>

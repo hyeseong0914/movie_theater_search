@@ -1,0 +1,50 @@
+{% extends "service.html"%}
+
+{%block area%}
+
+    <div class="a">
+
+    <h1>광주</h1>
+    <label>날짜:</label>
+    <form action="gwangju" method="post">
+        {% csrf_token %}
+
+        <input type="date" name="date" id="theDate" min="today" onfocus="blur()" required="required" />
+        <br>
+
+        CGV 광주상무: <input type="checkbox" name="cgv[]" value="광주상무" />
+        CGV 광주첨단: <input type="checkbox" name="cgv[]" value="광주첨단" />
+        CGV 광주충장로: <input type="checkbox" name="cgv[]" value="광주충장로" />
+        CGV 광주터미널: <input type="checkbox" name="cgv[]" value="광주터미널" /><br>
+
+        <br>
+        <h2>메가박스</h2>
+        광주 (충장로) <input type="checkbox" name="megabox[]" value="광주충장로" />
+        광주 상무 <input type="checkbox" name="megabox[]" value="광주상무" />
+        광주 하남 <input type="checkbox" name="megabox[]" value="광주하남" />
+
+        <br>
+        <br>
+        <br>
+        <h2>롯데시네마</h2>
+        광주 (백화점) <input type="checkbox" name="lotte[]" value="광주백화점" />
+        광주 수완 <input type="checkbox" name="lotte[]" value="광주수완" />
+        광주 광산 <input type="checkbox" name="lotte[]" value="광주광산" />
+
+
+
+        <input type="hidden" name="areacode" value="206" />
+        <input type="hidden" name="region" value="65" />
+        <input type="hidden" name="detailDivisionCode" value="4" />
+
+        <button type="submit">검색</button>
+    </form>
+
+    <br>
+    <h1>{{ date }}</h1>
+    {{ cgv_string | safe }}
+    {{ megabox_string | safe }}
+    {{ lotte_string | safe }}
+
+    </div>
+{% endblock %}

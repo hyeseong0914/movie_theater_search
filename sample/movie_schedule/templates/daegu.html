@@ -1,0 +1,186 @@
+{% extends "service.html"%}
+
+{%block area%}
+
+    <div class="a">
+    <h1>대구/경북</h1>
+    <label>날짜:</label>
+    <form action="daegu" method="post" >
+        {% csrf_token %}
+
+        <input type="date" name="date" id="theDate" min="today" onfocus="blur()" required="required" />
+        <br>
+        <br>
+        <div id="ck-button">
+            <h2>CGV</h2>
+            동성로:
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구" /><span>CGV <br>대구</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구한일" /><span>CGV <br>대구한일</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구현대" /><span>CGV <br>대구현대</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구아카데미" /><span>CGV <br>대구아카데미</span>
+            </label>
+
+            <br>
+            <br>
+            동성로 외 대구:
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구수성" /><span>CGV <br>대구수성</span>
+            </label>
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구스타디움" /><span>CGV <br>대구스타디움</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구월성" /><span>CGV <br>대구월성</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구이시아" /><span>CGV <br>대구이시아</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="cgv[]" value="대구칠곡" /><span>CGV <br>대구칠곡</span>
+            </label>
+
+            <br>
+            <br>
+            경북:
+            <label>
+                <input type="checkbox" name="cgv[]" value="구미" /><span>CGV <br>구미</span>
+            </label>
+            <label>
+                <input type="checkbox" name="cgv[]" value="김천율곡" /><span>CGV <br>김천율곡</span>
+            </label>
+            <label>
+                <input type="checkbox" name="cgv[]" value="북포항" /><span>CGV <br>북포항</span>
+            </label>
+            <label>
+                <input type="checkbox" name="cgv[]" value="포항" /><span>CGV <br>포항</span>
+            </label>
+            <label>
+                <input type="checkbox" name="cgv[]" value="안동" /><span>CGV <br>안동</span>
+            </label>
+
+
+            <br>
+            <br>
+            <h2>메가박스</h2>
+
+            <label>
+                <input type="checkbox" name="megabox[]" value="대구칠성로" /><span>메가박스 <br>대구칠성로</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="megabox[]" value="대구신세계" /><span>메가박스 <br>대구신세계</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="megabox[]" value="대구이시아" /><span>메가박스 <br>대구이시아</span>
+            </label>
+            <label>
+                <input type="checkbox" name="megabox[]" value="북대구" /><span>메가박스 <br>북대구</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="megabox[]" value="경산하양" /><span>메가박스 <br>경산하양</span>
+            </label>
+            <label>
+                <input type="checkbox" name="megabox[]" value="경주" /><span>메가박스 <br>경주</span>
+            </label>
+            <br><br>
+            <label>
+                <input type="checkbox" name="megabox[]" value="구미강동" /><span>메가박스 <br>구미강동</span>
+            </label>
+            <label>
+                <input type="checkbox" name="megabox[]" value="김천" /><span>메가박스 <br>김천</span>
+            </label>
+            <label>
+                <input type="checkbox" name="megabox[]" value="남포항" /><span>메가박스 <br>남포항</span>
+            </label>
+
+            <br>
+            <br>
+            <br>
+            <h2>롯데시네마</h2>
+
+            <label>
+                <input type="checkbox" name="lotte[]" value="대구동성로" /><span>롯데시네마 대구동성로</span>
+            </label>
+
+            <label>
+                <input type="checkbox" name="lotte[]" value="대구광장" /><span>롯데시네마 대구광장</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="대구상인" /><span>롯데시네마 대구상인</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="대구성서" /><span>롯데시네마 대구성서</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="대구율하" /><span>롯데시네마 대구율하</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="대구만경" /><span>롯데시네마 대구만경</span>
+            </label>
+
+
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" name="lotte[]" value="대구칠곡" /><span>롯데시네마 대구칠곡</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="경산" /><span>롯데시네마 경산</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="경주" /><span>롯데시네마 경주</span>
+            </label>
+
+<label>
+                <input type="checkbox" name="lotte[]" value="구미공단" /><span>롯데시네마 구미공단</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="구미프라임" /><span>롯데시네마 구미프라임</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="구미센트럴" /><span>롯데시네마 구미센트럴</span>
+            </label>
+
+            <br>
+            <br>
+            <label>
+                <input type="checkbox" name="lotte[]" value="영주" /><span>롯데시네마 영주</span>
+            </label>
+            <label>
+                <input type="checkbox" name="lotte[]" value="포항" /><span>롯데시네마 포항</span>
+            </label>
+
+
+        </div>
+
+        <input type="hidden" name="region" value="55" />
+        <input type="hidden" name="detailDivisionCode" value="5" />
+
+        <br>
+        <br>
+        <button type="submit" class="search_button">검색</button>
+    </form>
+    <br>
+    <h1>{{ date }}</h1>
+    {{ cgv_string | safe }}
+    {{ megabox_string | safe }}
+    {{ lotte_string | safe }}
+
+    </div>
+
+{% endblock %}

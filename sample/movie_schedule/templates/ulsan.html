@@ -1,0 +1,45 @@
+{% extends "service.html"%}
+
+{%block area%}
+
+    <div class="a">
+
+    <h1>울산</h1>
+    <label>날짜:</label>
+    <form action="ulsan" method="post">
+        {% csrf_token %}
+
+        <input type="date" name="date" id="theDate" min="today" onfocus="blur()" required="required" />
+        <br>
+
+        CGV 울산삼산: <input type="checkbox" name="cgv[]" value="울산삼산" /><br>
+        <input type="hidden" name="areacode" value="05" />
+        <button type="submit">검색</button>
+    </form>
+    <!--{% for i in cgv %}-->
+        <!--{{ i }}-->
+    <!--{% endfor %}-->
+    <!---->
+    <!--<br><br>-->
+
+    <!--{% for i in titles %}-->
+        <!--{{ i }}-->
+    <!--{% endfor %}-->
+
+    <!--<br><br>-->
+
+    <!--{% for i in theaters %}-->
+        <!--{{ i }}-->
+    <!--{% endfor %}-->
+
+    <!--<br><br>-->
+
+    <!--{% for i in time %}-->
+        <!--{{ i }}-->
+    <!--{% endfor %}-->
+    <br>
+    <h1>{{ date }}</h1>
+    {{ string | safe }}
+
+    </div>
+{% endblock %}

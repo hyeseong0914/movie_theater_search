@@ -1,0 +1,50 @@
+{% extends "service.html"%}
+
+{%block area%}
+
+    <div class="a">
+    <h1>서울</h1>
+    <label>날짜:</label>
+    <form action="seoul" method="post">
+        {% csrf_token %}
+
+        <input type="date" name="date" id="theDate" min="today" onfocus="blur()" required="required" />
+        <br>
+
+        CGV 강남: <input type="checkbox" name="cgv[]" value="강남" />
+        CGV 강변: <input type="checkbox" name="cgv[]" value="강변" />
+        CGV 건대입구: <input type="checkbox" name="cgv[]" value="건대입구" />
+        CGV 구로: <input type="checkbox" name="cgv[]" value="구로" />
+        CGV 군자: <input type="checkbox" name="cgv[]" value="군자" />
+        CGV 대학로: <input type="checkbox" name="cgv[]" value="대학로" /><br>
+        CGV 동대문: <input type="checkbox" name="cgv[]" value="동대문" />
+        CGV 명동: <input type="checkbox" name="cgv[]" value="명동" />
+        CGV 명동역: <input type="checkbox" name="cgv[]" value="명동역" />
+        CGV 목동: <input type="checkbox" name="cgv[]" value="목동" />
+        CGV 미아: <input type="checkbox" name="cgv[]" value="미아" />
+        CGV 불광: <input type="checkbox" name="cgv[]" value="불광" /><br>
+        CGV 상봉: <input type="checkbox" name="cgv[]" value="상봉" />
+        CGV 성신여대입구: <input type="checkbox" name="cgv[]" value="성신여대입구" />
+        CGV 송파: <input type="checkbox" name="cgv[]" value="송파" />
+        CGV 수유: <input type="checkbox" name="cgv[]" value="수유" />
+        CGV 신촌아트레온: <input type="checkbox" name="cgv[]" value="신촌아트레온" />
+        CGV 압구정: <input type="checkbox" name="cgv[]" value="압구정" /><br>
+        CGV 여의도: <input type="checkbox" name="cgv[]" value="여의도" />
+        CGV 영등포: <input type="checkbox" name="cgv[]" value="영등포" />
+        CGV 왕십리: <input type="checkbox" name="cgv[]" value="왕십리" />
+        CGV 용산아이파크몰: <input type="checkbox" name="cgv[]" value="용산아이파크몰" />
+        CGV 중계: <input type="checkbox" name="cgv[]" value="중계" />
+        CGV 천호: <input type="checkbox" name="cgv[]" value="천호" /><br>
+        CGV 청담씨네시티: <input type="checkbox" name="cgv[]" value="청담씨네시티" />
+        CGV 피카디리1958: <input type="checkbox" name="cgv[]" value="피카디리1958" />
+        CGV 하계: <input type="checkbox" name="cgv[]" value="하계" />
+        CGV 홍대: <input type="checkbox" name="cgv[]" value="홍대" /><br>
+        <input type="hidden" name="areacode" value="01" />
+        <button type="submit">검색</button>
+    </form>
+    <br>
+    <h1>{{ date }}</h1>
+    {{ string | safe }}
+    </div>
+
+{% endblock %}

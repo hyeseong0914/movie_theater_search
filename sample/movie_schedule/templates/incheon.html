@@ -1,0 +1,32 @@
+{% extends "service.html"%}
+
+{%block area%}
+
+    <div class="a">
+    <h1>인천</h1>
+    <label>날짜:</label>
+    <form action="incheon" method="post">
+        {% csrf_token %}
+
+        <input type="date" name="date" id="theDate" min="today" onfocus="blur()" required="required" />
+        <br>
+
+        CGV 계양: <input type="checkbox" name="cgv[]" value="계양" />
+        CGV 남주안: <input type="checkbox" name="cgv[]" value="남주안" />
+        CGV 부평: <input type="checkbox" name="cgv[]" value="부평" />
+        CGV 연수역: <input type="checkbox" name="cgv[]" value="연수역" />
+        CGV 인천: <input type="checkbox" name="cgv[]" value="인천" />
+        CGV 인천공항: <input type="checkbox" name="cgv[]" value="인천공항" /><br>
+        CGV 인천논현: <input type="checkbox" name="cgv[]" value="인천논현" />
+        CGV 인천연수: <input type="checkbox" name="cgv[]" value="인천연수" />
+        CGV 청라: <input type="checkbox" name="cgv[]" value="청라" />
+        CGV 주안역: <input type="checkbox" name="cgv[]" value="주안역" /><br>
+        <input type="hidden" name="areacode" value="202" />
+        <button type="submit">검색</button>
+    </form>
+    <br>
+    <h1>{{ date }}</h1>
+    {{ string | safe }}
+    </div>
+
+{% endblock %}

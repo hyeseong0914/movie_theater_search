@@ -1,0 +1,58 @@
+{% extends "service.html"%}
+
+{%block area%}
+
+    <div class="a">
+    <h1>부산</h1>
+    <label>날짜:</label>
+    <form action="busan" method="post">
+        {% csrf_token %}
+
+        <input type="date" name="date" id="theDate" min="today" onfocus="blur()" required="required" />
+        <br>
+
+        CGV 남포: <input type="checkbox" name="cgv[]" value="남포" />
+        CGV 대연: <input type="checkbox" name="cgv[]" value="대연" />
+        CGV 대한: <input type="checkbox" name="cgv[]" value="대한" />
+        CGV 동래: <input type="checkbox" name="cgv[]" value="동래" />
+        CGV 서면: <input type="checkbox" name="cgv[]" value="서면" />
+        CGV 아시아드: <input type="checkbox" name="cgv[]" value="아시아드" /><br>
+        CGV 해운대: <input type="checkbox" name="cgv[]" value="해운대" />
+        CGV 화명: <input type="checkbox" name="cgv[]" value="화명" />
+        CGV 정관: <input type="checkbox" name="cgv[]" value="정관" />
+        CGV 하단: <input type="checkbox" name="cgv[]" value="하단" />
+        CGV 센텀시티: <input type="checkbox" name="cgv[]" value="센텀시티" /><br>
+
+
+        <br>
+        <h2>메가박스</h2>
+        부산극장 <input type="checkbox" name="megabox[]" value="부산극장" />
+        부산대 <input type="checkbox" name="megabox[]" value="부산대" />
+        해운대 <input type="checkbox" name="megabox[]" value="해운대" />
+
+
+        <br>
+        <br>
+        <br>
+        <h2>롯데시네마</h2>
+        부산본점 <input type="checkbox" name="lotte[]" value="부산본점" />
+        사상 <input type="checkbox" name="lotte[]" value="사상" />
+        센텀시티 <input type="checkbox" name="lotte[]" value="센텀시티" />
+        오투 (부산대) <input type="checkbox" name="lotte[]" value="오투" />
+        해운대 <input type="checkbox" name="lotte[]" value="해운대" />
+
+
+        <input type="hidden" name="areacode" value="05" />
+        <input type="hidden" name="region" value="55" />
+        <input type="hidden" name="detailDivisionCode" value="101" />
+        <button type="submit">검색</button>
+    </form>
+
+    <br>
+    <h1>{{ date }}</h1>
+    {{ cgv_string | safe }}
+    {{ megabox_string | safe }}
+    {{ lotte_string | safe }}
+
+    </div>
+{% endblock %}
